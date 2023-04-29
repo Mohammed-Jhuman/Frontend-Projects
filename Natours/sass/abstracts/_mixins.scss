@@ -1,0 +1,42 @@
+@mixin clearfix{
+    &::after{
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+/*
+*0-600
+600-900
+900-1200
+1800+
+*/
+// @mixin respond-phone{
+//     @media (max-width:600px){
+//         @content;
+//     }
+// }
+
+@mixin respond($breakpoints){
+    @if($breakpoints==phone){
+        @media (max-width:37.5em){
+            @content;
+        }//600px
+    }
+    @if($breakpoints==tab-port){
+        @media (max-width:56.25em){
+            @content;
+        }//900px
+    }
+    @if($breakpoints==tab-land){
+        @media (max-width:75em){
+            @content;
+        }//1200px
+    }
+    @if($breakpoints==big-desktop){
+        @media (min-width:112.5em){
+            @content;
+        }//1800px
+    }
+}
