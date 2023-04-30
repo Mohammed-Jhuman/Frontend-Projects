@@ -42,6 +42,9 @@
     }
 }
 @media (max-width:450px){
+    html{
+   font-size:24%;
+   }
     .search-results{
         width: 32rem;
     }
