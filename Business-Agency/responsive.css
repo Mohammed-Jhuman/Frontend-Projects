@@ -1,0 +1,65 @@
+@media (max-width:700px){
+    html{
+        font-size: 50%;
+    }
+    .header__titles span{
+        letter-spacing: 0;
+    }
+}
+@media (max-width:800px){
+    .header__titles span{
+        font-size: 5rem;
+        transform: scale(1.2);
+    }
+    .contact__info{
+        width: 100%;
+    }
+    .contact__form{
+        width: 100%;
+    }
+    .form__text,
+    .form__email,
+    .form__message,
+    .submit{
+        width: 80%;
+    }
+}
+
+@media (max-width:500px){
+    html{
+        font-size: 40%;
+    }
+    .header{
+        height: 80vh;
+    }
+    .header__titles span{
+        letter-spacing: 0;
+    }
+    .about__us-container{
+        height: 90vh;
+    }
+    .about__us-text{
+        transform: translateY(50%);
+    }
+    .section__contact-us{
+        padding: 5rem 0;
+    }
+    .footer{
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+@media (max-width:400px){
+    html{
+        font-size: 35%;
+    }
+    .header{
+        height: 60vh;
+    }
+    .header__titles span{
+        font-size: 3.5rem;
+    }
+    .about__us-container{
+        height: 80vh;
+    }
+}

@@ -1,0 +1,410 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Poppins:wght@200;400;600;800&display=swap');
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+body{
+    font-family: 'Poppins',sans-serif;
+}
+/*=====header====*/
+.header{
+    height: 80vw;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 5;
+    overflow: hidden;
+}
+.floating-bg{
+    height: 150vw;
+    width: 150vw;
+    background-color: rgba(50, 231, 255, 0.4);
+    border-radius: 45%;
+    position: absolute;
+    top: -125vw;
+    left: calc(50% - 75vw);
+    animation: rotate 30s infinite;
+    z-index: -99999;
+}
+.floating-bg::before{
+    content: '';
+    height: 100%;
+    width: 100%;
+    background-color: rgba(50, 231, 255, 0.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 40%;
+    animation: rotate 30s infinite;
+
+}
+.header__title{
+    background-color: rgba(255,255,255,0.95);
+    padding: 1.4rem 5rem;
+    color: rgb(58, 55, 55);
+    font-size: 6rem;
+    font-family: 'Monoton',cursive;
+    font-weight: 200;
+    transform: translateY(-20%);
+    border-radius: 0.8rem;
+    margin: 10rem 0;
+}
+.icon{
+    color:rgba(50, 231, 255) ;
+    font-size: 10rem;
+    margin-top: 1.6rem;
+}
+.nav{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: translateX(-200%);
+    z-index: 10;
+    transition: transform 0.6s;
+}
+.nav__link{
+    text-decoration: none;
+    color: white;
+    font-size: 5rem;
+    display: inline-block;
+    padding: 2rem;
+    color: white;
+    transition: all 0.4s;
+    background-image: linear-gradient(120deg,transparent 0%,transparent 50%,rgba(50, 231, 255, 0.863) 50%);
+    background-size: 250%;
+    transition:all 0.8s;
+}
+.nav__link:hover{
+    background-position: 100%;
+    transform: translateX(-2rem);
+}
+.shownav{
+    transform: translateX(0);
+}
+    
+.nav__bg{
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    background-color: rgba(41, 97, 104,0.7);
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    z-index: 5;
+    transition: all 0.8s;
+}
+
+.nav__btn{
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    background-color: white;
+    height: 7rem;
+    width: 7rem;
+    z-index: 30;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0.4rem 1rem rgba(0,0,0,0.15);
+    cursor: pointer;
+}
+.btn__line{
+    width: 60%;
+    height: 0.2rem;
+    background-color: black;
+    display: inline-block;
+    position: relative;
+}
+.btn__line::before{
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 0.2rem;
+    background-color: black;
+    position: absolute;
+    top: -1rem;
+    left: 0;
+    transition: all 0.4s;
+}
+.btn__line::after{
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 0.2rem;
+    background-color: black;
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    transition: all 0.4s;
+}
+.shownav.btn__line{
+    background-color: transparent;
+}
+.shownav.btn__line::before{
+    top: 0%;
+    transform: rotate(135deg);
+}
+.shownav.btn__line::after{
+    top: 0%;
+    transform: rotate(-135deg);
+}
+.shownav.nav__bg{
+    transform: scale(500);
+}
+
+@keyframes rotate {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+/*=============customers================*/
+.section__title{
+    text-align: center;
+    font-size: 8rem;
+    color: #999;
+    font-weight: 400;
+    opacity: 0.1;
+}
+.card{
+    width: 35rem;
+    height: 55rem;
+    background-color: #eee;
+    box-shadow: 1rem 1rem 2rem #ddd , -1rem -1rem 2rem #eee;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+    margin: 5rem 10rem;
+}
+.card > i{
+    font-size: 8rem;
+    color: #F08E0F;
+}
+.card__details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.card__text{
+    font-size: 1.8rem;
+    text-align: justify;
+    font-weight: 400;
+}
+.card__ratings > i{
+    font-size: 2rem;
+    color: #F08E0F;
+}
+.rating__img{
+    height: 10rem;
+    width: 10rem;
+    object-fit: cover;
+    border-radius: 50%;
+    margin:2rem 0;
+}
+.customer__name{
+    font-size: 2rem;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+.rating-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 5rem;
+}
+/*========team====*/
+.team{
+    padding: 10rem 0;
+}
+.team__container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 70%;
+}
+.team__card{
+    background-color: #fffeee;
+    width: 35rem;
+    padding: 2rem;
+    position: relative;
+    margin: 5rem 10rem;
+}
+.team__img{
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 2px;
+    object-fit: cover;
+}
+.team__name{
+    color: #988A48;
+    font-size: 2rem;
+    text-transform: capitalize;
+    font-weight: 400;
+    padding: 0.8rem 0;
+}
+.team__skills{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+.team__skill{
+    font-size: 1.4rem;
+}
+.team__btn{
+    border: none;
+    background-color: #F08E0F;
+    color: white;
+    padding:0.4rem 1rem;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    cursor: pointer;
+}
+.story__bg{
+    
+    position: absolute;
+    height:4rem;
+    width: 4rem;
+    border-radius: 50%;
+    top: 2rem;
+    right: 2rem;
+}
+.story{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(253, 69, 69, 0.9);
+    transform: scale(0);
+    transform-origin: top right;
+    transition: transform 0.5s;
+    z-index: 3;
+}
+.story__title{
+    color: white;
+    font-size: 3rem;
+}
+.story__text{
+    color: white;
+    text-align: justify;
+    font-size: 1.8rem;
+}
+.story__btn{
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    height: 4rem;
+    width: 4rem;
+    background-color: #222222;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 5;
+}
+.story__line{
+    display: inline-block;
+    height: 0.1rem;
+    width: 80%;
+    background-color: white;
+    transition: transform 0.3s;
+}
+.change + .story{
+    transform: scale(1);
+}
+.change .story__line{
+    transform: rotate(135deg);
+}
+/*===========contact====*/
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.form__container{
+    width: 80%;
+    height: 60rem;
+    background-color: #E5E9FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 45rem;
+    background-color: white;
+    padding: 3rem;
+    box-shadow: 3rem 3rem 4rem #aaa;
+}
+input[type='text'],
+input[type='email'],
+textarea{
+    width: 30rem;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 30px;
+    border: none;
+    box-shadow: inset 0.1rem 0.1rem 0.2rem #ddd,inset -0.1rem -0.1rem 0.2rem #ddd;
+}
+input[type='text'],
+input[type='email'],
+textarea:focus{
+    outline: none;
+}
+textarea{
+    height: 10rem;
+}
+.submit{
+    border: none;
+    background-color: #32E7FF;
+    color: white;
+    width: 30rem;
+    padding: 1rem;
+    border-radius: 30px;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+.copyright{
+    margin: 2rem;
+}
+.copyright__text{
+    font-size: 2rem;
+    font-weight: 400;
+}

@@ -1,0 +1,577 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600;800&display=swap');
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito',sans-serif;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+
+/*=============header=======================*/
+.header{
+    padding-bottom: 10rem;
+    /* background-image: url('images/slideshow/section-1-bg-1.jpg');
+    background-size: cover;
+    background-position: center; */
+    clip-path:polygon(0 0, 100% 0,100% 95%,0 100%);
+    position: relative;
+}
+.nav__items.sidebar{
+    display: none;
+}
+.mobile-btn{
+    display: none;
+}
+.header__img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -999;
+    transition: all 5s;
+}
+.show.header__img{
+    opacity: 1;
+    visibility: visible;
+}
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.nav__logo svg{
+    width: 8rem;
+    height: 8rem;
+    margin-left: 1.2rem;
+}
+.nav__items{
+    list-style: none;
+    display: flex;
+}
+.nav__item{
+    margin-right: 4rem;
+}
+.nav__link{
+    text-decoration: none;
+    color: black;
+    font-size: 1.6rem;
+    display: inline-block;
+    backface-visibility: hidden;
+    transition: transform 0.5s;
+}
+.nav__item:hover .nav__link{
+    transform: scale(1.5);
+}
+.cube__container{
+    perspective: 100rem;
+}
+.header__main-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 8rem;
+}
+.heading-1{
+    font-size: 8rem;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+.header__title{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.heading-text{
+    font-size: 3rem;
+}
+.name{
+    text-align: center;
+    font-size: 3rem;
+    text-transform: capitalize;
+}
+.heading-btn{
+    align-self:center;
+    border: none;
+    background-color: #000000;
+    color: #22B1E6;
+    width: 13rem;
+    padding: 1.2rem 0;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    clip-path:polygon( 50% 0%, 81% 5%, 100% 0, 100% 100%, 80% 95%, 50% 100%, 20% 95%, 0 100%, 0 0, 23% 5% );
+    cursor: pointer;
+    transition: clip-path 0.4s;
+}
+.heading-btn:hover{
+    clip-path: polygon( 40% 15%, 77% 15%, 100% 10%, 100% 90%, 75% 85%, 40% 85%, 30% 100%, 0 50%, 0 50%, 30% 0 );
+}
+.cube{
+    width: 20rem;
+    height: 40rem;
+    transform-style: preserve-3d;
+    /* transform: rotateY(180deg); */
+    transition: all 0.2s;
+}
+.front-side{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform: translateZ(2rem);
+    transform-style: preserve-3d;
+}
+.front-side::before{
+    content: '';
+    display: inline-block;
+    top: 0;
+    left: 0;
+    position: absolute;
+    transform: rotateX(-90deg);
+    background-color: white;
+    transform-origin: top;
+    width: 100%;
+    height: 4rem;
+}
+.front-side::after{
+    content: '';
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    transform: rotateX(90deg);
+    background-color: white;
+    transform-origin: bottom;
+    width: 100%;
+    height: 4rem;
+}
+.front-side img{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    object-fit: contain;
+}
+
+.back-side {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    transform: translateZ(-2rem);
+    transform-style: preserve-3d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.back-side svg{
+    width: 8rem;
+    height: 8rem;
+    transform: rotateY(180deg);
+}
+.back-side::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotateY(-90deg);
+    transform-origin: left;
+    height: 100%;
+    width: 4rem;
+    background-color: white;
+}
+.back-side::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: rotateY(90deg);
+    transform-origin: right ;
+    height: 100%;
+    width: 4rem;
+    background-color: white;
+}
+
+/*====================iphones section============================*/
+.iphone-section{
+    padding: 10rem 0;
+}
+.section-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+}
+.section-title{
+    font-size: 6rem;
+    font-weight: 200;
+    position: relative;
+}
+.section-title::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 130%;
+    height: 30vw;
+    background-image: linear-gradient(#74DBE7,#fff);
+    transform: skewX(-50deg);
+    transform-origin:left top ;
+    z-index: -2;
+    border-radius: 1rem;
+}
+.iphone-container{
+    background-image: linear-gradient(to bottom,#74DBE7,#fff);
+    width: 60rem;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    height: 40rem;
+}
+.iphone-1,
+.iphone-2{
+    display: inline-block;
+    position: absolute;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.iphone-1{
+    width: 35rem;
+    transition: all 4s;
+}
+.iphone-2{
+    width: 25rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 4s;
+}
+.show2 .iphone-1{
+    opacity: 0;
+    visibility: hidden;
+}
+.show2 .iphone-2{
+    opacity: 1;
+    visibility: visible;
+}
+.iphone__btns{
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0;
+}
+.btn{
+    background-color: #333333;
+    border: none;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 2rem;
+    margin-right: 2rem;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+.btn::before{
+    content: '';
+    position: absolute;
+    height: 2.5rem;
+    width: 2.5rem;
+    border: 0.1rem solid white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.btn span{
+    color: #74DBE7;
+    position: absolute;
+    top: -2.2rem;
+    display: inline-block;
+    letter-spacing: 0.1rem;
+    font-size: 0.7rem;
+    width: 100%;
+    transform: scale(0);
+    transition: transform 0.4s;
+}
+
+.span-1{
+    left: 0;
+}
+.span-2{
+    right: 0;
+}
+.btn__learn-more:hover .span-1{
+    transform: scale(2);
+}
+.btn__shop:hover .span-2{
+    transform: scale(2);
+}
+
+/*============macbook section======================*/
+.macbook-section{
+    background-color: #000000;
+    padding: 5rem 0;
+}
+.macbook-container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.macbook-container img{
+    width: 60rem;
+}
+.macbook-top{
+    transform: rotateX(-80deg);
+    transform-origin: bottom;
+    transition: transform 3s;
+}
+.change .macbook-top{
+    transform: rotateX(0);
+}
+.macbook-screen{
+    position: absolute;
+    top: 2rem;
+    left:8rem;
+    background-image:linear-gradient(rgba(255, 255, 255, 0.6),rgba(255, 255, 255, 0.6)), url('images/MacBook/macbook-1-desktop.png');
+    width: 73%;
+    height: 80%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 2s 3s;
+}
+.change .macbook-screen{
+    opacity: 1;
+}
+.screen-title{
+    font-size: 6rem;
+    color: #6EDAE6;
+    text-transform: capitalize;
+    font-weight: 400;
+}
+.price{
+    font-size: 3rem;
+    font-weight: 200;
+}
+.order{
+    border: none;
+    width: 15rem;
+    padding: 1rem;
+    font-size: 1.6rem;
+    text-transform: capitalize;
+    color: #6EDAE6;
+    border-radius: 10px;
+    margin-top: 1.4rem;
+    cursor: pointer;
+}
+.macbook-title{
+    color: #60BFCA;
+    font-size: 6rem;
+    font-weight: 200;
+}
+
+/*=================watch section================*/
+
+ button svg{
+    width: 2rem;
+    height: 2rem;
+    fill: #8EDAE6;
+}
+.up-arrow{
+    position: absolute;
+    height: 4rem;
+    width: 4rem;
+    right: 5rem;
+    top: 3.5rem;
+    left: 50%;
+    transform: translateY(-50%);
+    color: #ddd;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+.down-arrow{
+    position: absolute;
+    height: 4rem;
+    width: 4rem;
+    right: 5rem;
+    bottom: 0;
+    left: 50%;
+    transform: translateY(-50%);
+    color: #ddd;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+.right-arrow{
+    position: absolute;
+    height: 4rem;
+    width: 4rem;
+    right: 5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ddd;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+.left-arrow{
+    position: absolute;
+    height: 4rem;
+    width: 4rem;
+    left: 5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: #ddd;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+} 
+
+
+/* .watch-section{
+    padding: 20rem 0;
+} */
+.watch-section{
+    display: flex;
+    height: 80rem;
+    width: 100vw;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+.watch-container{
+    position: relative;
+    /* margin: 0 auto; */
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+}
+.horizontal-slider{
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(12.5rem);
+}
+.horizontal-slider,
+.vertical-slider{
+    position: absolute;
+    display: flex;
+    transition: all 1s;
+
+}
+.vertical-slider{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 5rem;
+}
+.horizontal-slider img{
+    /* display: inline-block; */
+    width: 25rem;
+    height: 25rem;
+    object-fit: cover;
+}
+.vertical-slide{
+    /* display: inline-block; */
+    width: 25rem;
+    height: 25rem;
+    object-fit: cover;
+}
+.hidebtn{
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+/*========airpod container============*/
+.airpods-section{
+    padding: 5rem 0;
+}
+.airpods-container{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding: 0 2rem;
+}
+
+.learn-more--btn{
+    position: absolute;
+    top: 50%;
+    left: 41%;
+    border: none;
+    color: white;
+    background-color: #6EDAE6;
+    width: 9rem;
+    padding: 0.4rem 0;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.buy--btn{
+    position: absolute;
+    top: 50%;
+    right: 41%;
+    border: none;
+    color: #6EDAE6;
+    background-color: white;
+    width: 9rem;
+    padding: 0.4rem 0;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.airpod-right{
+    background-color: #6EDAE6;
+}
+.airpod-1,
+.airpod-2{
+    width: 50rem;
+}
+.airpod__heading{
+    position: absolute;
+    top: 1%;
+    color: white;
+    text-shadow: 0.1rem 0.1rem 0.1rem black;
+    font-weight: 400;
+    font-size: 8rem;
+}
+/*============footer===========================*/
+.footer{
+    padding: 5rem 0;
+}
+.copyright__text{
+    text-align: center;
+    font-size: 2rem;
+}
+
+/*==================to top===============*/
+.to-top{
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+}
+.to-top--btn{
+    height: 3rem;
+    width: 3rem;
+    display: inline-block;
+    background-color: transparent;
+    padding: 0.5rem;
+    fill: #22B1E6;
+}
