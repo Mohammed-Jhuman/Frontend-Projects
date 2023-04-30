@@ -1,0 +1,51 @@
+@media (max-width:750px){
+    html{
+        font-size: 40%;
+    }
+}
+@media (max-width:600px){
+    .pagination{
+        padding: 0 1.4rem;
+    }
+    .btn--inline{
+        padding: 0.4rem;
+    }
+    .preview__link:link,
+    .preview__link:visited{
+        padding: 0.5rem 0;
+    }
+}
+@media (max-width:550px){
+    html{
+        font-size: 35%;
+    }
+    .header{
+        flex-wrap: wrap;
+        box-sizing: content-box;
+    }
+    .search{
+        order: 1;
+        margin: 0 auto;
+        position: relative;
+        z-index: 999;
+    }
+    /* .preview__link:link,
+    .preview__link:visited{
+        padding: 1rem 0.1rem;
+    } */
+    .container{
+        overflow: auto;
+    }
+    .add-recipe-window{
+        width: 80rem;
+        padding: 4rem 3rem;
+    }
+}
+@media (max-width:450px){
+    html{
+        font-size: 24%;
+    }
+    .search-results{
+        width: 32rem;
+    }
+}
